@@ -1,0 +1,13 @@
+name: Actions
+on:
+  push:
+    branches:
+      - main
+      # push가 일어나면 해당 브렌치에 작업을 실행
+
+jobs:
+  build:
+    runs-on: ubuntu-latest          #우분투에서 제공
+    steps:
+      - uses: actions/checkout@v3   # github 제공 기능임
+      - run: npm ci
