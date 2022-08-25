@@ -1,9 +1,13 @@
 name: Actions
 on:
-  push:
+  # push:
+  #   branches:
+  #     - main
+  # push가 일어나면 해당 브렌치에 작업을 실행
+  pull_request:
     branches:
-      - main
-      # push가 일어나면 해당 브렌치에 작업을 실행
+      -main
+    types: [ closed ]
 
 jobs:
   build:
