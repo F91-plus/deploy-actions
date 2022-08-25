@@ -10,4 +10,20 @@ jobs:
     runs-on: ubuntu-latest          #우분투에서 제공
     steps:
       - uses: actions/checkout@v3   # github 제공 기능임
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+          cache: npm
       - run: npm ci
+      - run: npm test
+      - run: npm run build
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public
+
+
+      
+# github 레퍼지토리에 연동 후 push 이후 actions 에서 확인
+# build 에서 Run npm ci 확인 - 패키지 설치 확인 -> 프로젝트 실행 준비 완료!
