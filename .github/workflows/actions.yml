@@ -20,10 +20,9 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}   
+          # github 프로필 settings 에서 토큰 받기, 레파지토리 세팅에서 Secrets-Actions 에서 토큰 넣고 사용
           publish_dir: ./public
 
-
-      
 # github 레퍼지토리에 연동 후 push 이후 actions 에서 확인
 # build 에서 Run npm ci 확인 - 패키지 설치 확인 -> 프로젝트 실행 준비 완료!
